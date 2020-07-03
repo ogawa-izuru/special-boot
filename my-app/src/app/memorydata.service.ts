@@ -9,6 +9,11 @@ export class InMemoryDataService implements InMemoryDbService {
         title: 'BootCampの練習だよ',
         mainContent: 'aaaaaaaaaaaaaa\naaaaaaa',
       },
+      {
+        id: 4,
+        title: '4だよ',
+        mainContent: 'aaaaaaaaaaaaaa\naaaaaaa',
+      },
     ];
     return { article };
   }

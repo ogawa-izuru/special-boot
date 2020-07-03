@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { BlogDetailService } from '../service/blog-detail.service';
 import { Article } from '../class/article';
 
@@ -8,15 +9,20 @@ import { Article } from '../class/article';
   styleUrls: ['./blog-detail.component.scss'],
 })
 export class BlogDetailComponent implements OnInit {
-  article: Article;
+  article;
+  routeParam;
 
-  constructor(private detail: BlogDetailService) {}
+  constructor(
+    private detail: BlogDetailService,
+    private route: ActivatedRoute
+  ) {}
 
   async ngOnInit() {
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.routeParam = params.get('id');
+    });
     this.article = await this.detail
-      .getArticle()
-      .then((response) => response[0]);
+      .getArticle(this.routeParam)
+      .then((response) => response);
   }
-
-  async getTitle() {}
 }

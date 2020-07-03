@@ -7,8 +7,9 @@ import { HttpClient } from '@angular/common/http';
 export class BlogDetailService {
   constructor(private http: HttpClient) {}
 
-  async getArticle() {
-    const res = await this.http.get('/api/article/').toPromise();
+  async getArticle(id) {
+    const res = await this.http.get('/api/article/' + id).toPromise();
+    console.log(res);
     return res;
   }
 }
