@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogDetailService } from '../service/blog-detail.service';
+import { Article } from '../class/article';
 
 @Component({
   selector: 'app-blog-detail',
@@ -7,14 +8,14 @@ import { BlogDetailService } from '../service/blog-detail.service';
   styleUrls: ['./blog-detail.component.scss'],
 })
 export class BlogDetailComponent implements OnInit {
-  title;
+  article: Article;
 
   constructor(private detail: BlogDetailService) {}
 
   async ngOnInit() {
-    this.title = await this.detail
+    this.article = await this.detail
       .getArticle()
-      .then((response) => response[0].title);
+      .then((response) => response[0]);
   }
 
   async getTitle() {}

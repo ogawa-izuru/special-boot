@@ -4,7 +4,11 @@ import { Article } from './class/article';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     let article: Article[] = [
-      { id: 1, title: 'unko', mainContent: 'aaaaaaaaaaaaaa' },
+      {
+        id: 1,
+        title: 'BootCampの練習だよ',
+        mainContent: 'aaaaaaaaaaaaaa\naaaaaaa',
+      },
     ];
     return { article };
   }
