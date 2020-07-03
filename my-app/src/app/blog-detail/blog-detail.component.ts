@@ -7,15 +7,15 @@ import { BlogDetailService } from '../service/blog-detail.service';
   styleUrls: ['./blog-detail.component.scss'],
 })
 export class BlogDetailComponent implements OnInit {
-  title = '定数だよーーん';
+  title;
 
   constructor(private detail: BlogDetailService) {}
 
-  ngOnInit(): void {}
-
-  async getTitle() {
+  async ngOnInit() {
     this.title = await this.detail
       .getArticle()
       .then((response) => response[0].title);
   }
+
+  async getTitle() {}
 }
