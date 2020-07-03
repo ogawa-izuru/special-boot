@@ -31,8 +31,12 @@
   justify-content: space-between;
 
   &__assessment {
+    display: flex;
+    align-items: center;
     .good {
+      margin: 10px;
       font-size: 50px;
+
       &:hover {
         color: blue;
       }
@@ -41,6 +45,7 @@
       font-size: 20px;
     }
     .bad {
+      margin: 10px;
       font-size: 50px;
       &:hover {
         color: red;
@@ -52,7 +57,7 @@
   }
 
   &__edit {
-    .write {
+    .rewrite {
       font-size: 50px;
       &:hover {
         color: grey;
