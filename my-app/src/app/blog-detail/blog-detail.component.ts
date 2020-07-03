@@ -10,6 +10,8 @@ import { Article } from '../class/article';
 })
 export class BlogDetailComponent implements OnInit {
   article;
+  title;
+  mainContent;
   routeParam;
 
   constructor(
@@ -24,5 +26,7 @@ export class BlogDetailComponent implements OnInit {
     this.article = await this.detail
       .getArticle(this.routeParam)
       .then((response) => response);
+    this.title = this.article.title;
+    this.mainContent = this.article.mainContent;
   }
 }
