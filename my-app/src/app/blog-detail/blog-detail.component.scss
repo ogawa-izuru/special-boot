@@ -1,52 +1,75 @@
 .article {
   margin: auto;
-  width : 60%;
+  width: 60%;
   height: auto;
   min-height: 100%;
   border: solid 2px aqua;
-    &__title {
+  &__title {
     border: solid 2px navy;
-    height:50px;
+    height: 50px;
     h2 {
-        margin:5px;
-        padding-left: 10px;
-        float: left;
-        width: 70%;
-        height: 75%;
-        border: solid 2px blueviolet;
-
-      }
+      margin: 5px;
+      padding-left: 10px;
+      float: left;
+      width: 70%;
+      height: 75%;
+      border: solid 2px blueviolet;
+    }
   }
 }
 
-.article_body{
+.article_body {
   margin: 10px;
-  min-height:75%;
+  min-height: 75%;
   border: solid 2px darkorange;
 }
-.edit-area{
-  margin:10px;
+.edit-area {
+  margin: 10px;
   height: 50px;
   border: solid 2px chocolate;
   display: flex;
+  justify-content: space-between;
+
+  &__assessment {
+    .good {
+      font-size: 50px;
+      &:hover {
+        color: blue;
+      }
+    }
+    .good_count {
+      font-size: 20px;
+    }
+    .bad {
+      font-size: 50px;
+      &:hover {
+        color: red;
+      }
+    }
+    .bad_count {
+      font-size: 20px;
+    }
+  }
+
+  &__edit {
+    .write {
+      font-size: 50px;
+      &:hover {
+        color: grey;
+      }
+    }
+
+    .delete {
+      font-size: 50px;
+      &:hover {
+        color: grey;
+      }
+    }
+  }
 }
-.paging{
-  margin:10px;
+
+.paging {
+  margin: 10px;
   height: 25px;
   border: solid 2px greenyellow;
-}
-
-.icon-good{
-  color: rgb(100, 187, 20);
-  
-}
-
-.icon-appearance{
-  font-size: 50px;
-  margin: 2px;
-  float: right;
-
-  &:hover{
-    color: gray;
-  }
 }
