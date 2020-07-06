@@ -35,12 +35,23 @@ export class BlogDetailComponent implements OnInit {
   }
 
   async goPrev() {
-    this.article = await this.detail
-      .getPrevArticle(this.routeParamId)
-      .then((response) => response);
-    console.log(this.article);
+    // this.article = await this.detail
+    //   .getPrevArticle(this.routeParamId)
+    //   .then((response) => response);
+    // console.log(this.article);
+    let AllItem = await this.getAllArticle();
+    console.log(AllItem);
   }
   goNext() {
     alert('Next');
+  }
+
+  deleteArticle() {
+    alert('消します。');
+    this.detail.deleteArticle(this.routeParamId);
+  }
+
+  async getAllArticle() {
+    return await this.detail.getAllArticle().then((response) => response);
   }
 }

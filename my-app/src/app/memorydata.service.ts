@@ -11,13 +11,7 @@ export class InMemoryDataService implements InMemoryDbService {
         good: 3,
         bad: 7,
       },
-      {
-        id: 2,
-        title: '野球しました',
-        mainContent: '今日は磯野野球しました。楽しかったです。',
-        good: 50,
-        bad: 10,
-      },
+
       {
         id: 3,
         title: 'ユーザーIDと紐づけした。',
