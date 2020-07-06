@@ -12,11 +12,39 @@ export class InMemoryDataService implements InMemoryDbService {
         bad: 7,
       },
       {
+        id: 2,
+        title: '野球しました',
+        mainContent: '今日は磯野野球しました。楽しかったです。',
+        good: 50,
+        bad: 10,
+      },
+      {
+        id: 3,
+        title: 'ユーザーIDと紐づけした。',
+        mainContent: 'プログラミングを勉強しています。ユーザーIDが欲しいです。',
+        good: 30,
+        bad: 10,
+      },
+      {
         id: 4,
         title: '4だよ',
         mainContent: 'aaaaaaaaaaaaaa\naaaaaaa',
         good: 1,
         bad: 99,
+      },
+      {
+        id: 5,
+        title: 'サッカーをしました。',
+        mainContent: '楽しかったです。',
+        good: 50,
+        bad: 10,
+      },
+      {
+        id: 6,
+        title: 'ページングします',
+        mainContent: '頑張ばります。',
+        good: 30,
+        bad: 10,
       },
     ];
     return { article };

@@ -14,7 +14,7 @@ export class BlogDetailComponent implements OnInit {
   mainContent;
   good;
   bad;
-  routeParam;
+  routeParamId;
 
   constructor(
     private detail: BlogDetailService,
@@ -23,14 +23,24 @@ export class BlogDetailComponent implements OnInit {
 
   async ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.routeParam = params.get('id');
+      this.routeParamId = params.get('id');
     });
     this.article = await this.detail
-      .getArticle(this.routeParam)
+      .getArticle(this.routeParamId)
       .then((response) => response);
     this.title = this.article.title;
     this.mainContent = this.article.mainContent;
     this.good = this.article.good;
     this.bad = this.article.bad;
+  }
+
+  async goPrev() {
+    this.article = await this.detail
+      .getPrevArticle(this.routeParamId)
+      .then((response) => response);
+    console.log(this.article);
+  }
+  goNext() {
+    alert('Next');
   }
 }

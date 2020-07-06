@@ -22,7 +22,7 @@
   &_body {
     border: solid 0.5px black;
     margin: 10px;
-    min-height: 480px;
+    min-height: 400px;
     white-space: pre-line;
   }
 }
@@ -80,5 +80,19 @@
 .paging {
   border: solid 0.5px black;
   margin: 10px;
-  height: 25px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+
+  div {
+    font-size: 60px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      color: rgb(62, 106, 226);
+    }
+  }
 }

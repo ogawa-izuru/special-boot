@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CompileShallowModuleMetadata } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,23 @@ export class BlogDetailService {
 
   async getArticle(id) {
     const res = await this.http.get('/api/article/' + id).toPromise();
-    console.log(res);
     return res;
+  }
+
+  async getPrevArticle(id) {
+    // let res = await this.http.get('/api/article/' + --id).toPromise();
+    let res = await this.http.get('/api/article/' + --id);
+    console.log(res);
+
+    // return res.toPromise() || this.getPrevArticle(id);
+
+    if (res) {
+      //ここを改良
+      console.log(res.toPromise, 'cccccc');
+      return res.toPromise;
+    } else {
+      this.getPrevArticle(id);
+      console.log('bbbbb');
+    }
   }
 }
