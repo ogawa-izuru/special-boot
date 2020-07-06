@@ -10,6 +10,7 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './memorydata.service';
+import { DeletedDisplayComponent } from './deleted-display/deleted-display.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { InMemoryDataService } from './memorydata.service';
     BlogDetailComponent,
     HeaderComponent,
     BlogListComponent,
+    DeletedDisplayComponent,
   ],
   imports: [
     BrowserModule,

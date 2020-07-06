@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { BlogDetailService } from '../service/blog-detail.service';
 import { Article } from '../class/article';
 
@@ -20,11 +20,12 @@ export class BlogDetailComponent implements OnInit {
 
   constructor(
     private detail: BlogDetailService,
-    private route: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   async ngOnInit() {
-    this.route.paramMap.subscribe((params: ParamMap) => {
+    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       this.routeParamId = parseInt(params.get('id'));
     });
     this.article = await this.detail
@@ -108,9 +109,11 @@ export class BlogDetailComponent implements OnInit {
   }
 
   async deleteArticle() {
-    alert('消します。');
-    let sample = await this.detail.deleteArticle(this.routeParamId);
-    console.log(sample);
+    let flag = confirm('削除してもよろしいでしょうか？');
+    if (flag) {
+      await this.detail.deleteArticle(this.routeParamId);
+      this.router.navigate(['deleted']);
+    }
   }
 
   async getAllArticle(): Promise<any> {

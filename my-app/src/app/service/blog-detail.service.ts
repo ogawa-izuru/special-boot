@@ -32,8 +32,7 @@ export class BlogDetailService {
   }
 
   async deleteArticle(id) {
-    console.log(id);
-    return await this.http.delete('api/article/4').toPromise();
+    return await this.http.delete('api/article/' + id).toPromise();
   }
 
   async getAllArticle() {
