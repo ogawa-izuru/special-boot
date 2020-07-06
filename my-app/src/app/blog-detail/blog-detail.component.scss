@@ -1,11 +1,14 @@
 .article {
+  border: solid 0.5px black;
   margin: auto;
+  margin-top: 20px;
   width: 60%;
   height: auto;
   min-height: 100%;
-  border: solid 2px aqua;
+  max-width: 40%;
+  border-radius: 5px;
   &__title {
-    border: solid 2px navy;
+    border: solid 0.5px black;
     height: 50px;
     h2 {
       margin: 5px;
@@ -13,20 +16,21 @@
       float: left;
       width: 70%;
       height: 75%;
-      border: solid 2px blueviolet;
+      border: solid 0.5px black;
     }
+  }
+  &_body {
+    border: solid 0.5px black;
+    margin: 10px;
+    min-height: 480px;
+    white-space: pre-line;
   }
 }
 
-.article_body {
-  margin: 10px;
-  min-height: 480px;
-  border: solid 2px darkorange;
-}
 .edit-area {
+  border: solid 0.5px black;
   margin: 10px;
   height: 50px;
-  border: solid 2px chocolate;
   display: flex;
   justify-content: space-between;
 
@@ -74,7 +78,7 @@
 }
 
 .paging {
+  border: solid 0.5px black;
   margin: 10px;
   height: 25px;
-  border: solid 2px greenyellow;
 }
