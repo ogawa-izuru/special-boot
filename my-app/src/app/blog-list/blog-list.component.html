@@ -1,1 +1,10 @@
-<p>blog-list works!</p>
+<ul>
+  <li class="user-headline"><h1>〇〇さんの記事</h1></li>
+  <li
+    *ngFor="let article of articleList"
+    class="simple-article"
+    routerLink="/detail/{{ article.id }}"
+  >
+    {{ article.title }}
+  </li>
+</ul>

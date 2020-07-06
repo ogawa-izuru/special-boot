@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-html,body{
-    margin:0;
-    padding:0;
-    height: auto;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
 }

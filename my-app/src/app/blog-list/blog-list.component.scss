@@ -1,0 +1,19 @@
+.user-headline {
+  margin: auto;
+  width: 60%;
+}
+
+.simple-article {
+  width: 60%;
+  height: 80px;
+  font-size: 25px;
+  border: 1px solid white;
+  margin: auto;
+  margin-top: 20px;
+  padding-left: 20px;
+  background-color: #f5deb342;
+
+  &:hover {
+    background-color: #586de442;
+  }
+}
