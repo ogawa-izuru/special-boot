@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CompileShallowModuleMetadata } from '@angular/compiler';
 
+import { Article } from '../class/article';
+
 @Injectable({
   providedIn: 'root',
 })
 export class BlogDetailService {
   constructor(private http: HttpClient) {}
 
-  async getArticle(id) {
-    const res = await this.http.get('/api/article/' + id).toPromise();
-    return res;
+  async getArticle(id): Promise<any> {
+    return await this.http.get('/api/article/' + id).toPromise();
   }
 
   async getPrevArticle(id) {

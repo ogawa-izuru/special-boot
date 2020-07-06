@@ -9,12 +9,12 @@ import { Article } from '../class/article';
   styleUrls: ['./blog-detail.component.scss'],
 })
 export class BlogDetailComponent implements OnInit {
-  article;
-  title;
-  mainContent;
-  good;
-  bad;
-  routeParamId;
+  article: Article;
+  title: string;
+  mainContent: string;
+  good: number;
+  bad: number;
+  routeParamId: number;
 
   constructor(
     private detail: BlogDetailService,
@@ -23,7 +23,7 @@ export class BlogDetailComponent implements OnInit {
 
   async ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.routeParamId = params.get('id');
+      this.routeParamId = parseInt(params.get('id'));
     });
     this.article = await this.detail
       .getArticle(this.routeParamId)
@@ -39,7 +39,7 @@ export class BlogDetailComponent implements OnInit {
     //   .getPrevArticle(this.routeParamId)
     //   .then((response) => response);
     // console.log(this.article);
-    let AllItem: any;
+    let AllItem: Article[];
     AllItem = await this.getAllArticle();
     AllItem = AllItem.sort(function (a, b) {
       if (a.id < b.id) {
@@ -48,7 +48,13 @@ export class BlogDetailComponent implements OnInit {
         return 1;
       }
     });
-    console.log(AllItem);
+    let temp = AllItem.findIndex((element) => element.id === this.routeParamId);
+
+    console.log(typeof AllItem[0].id);
+    console.log(temp);
+    AllItem.forEach((element) => {
+      console.log(element);
+    });
   }
   goNext() {
     alert('Next');
