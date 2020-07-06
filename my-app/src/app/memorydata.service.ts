@@ -5,7 +5,7 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     let article: Article[] = [
       {
-        id: 1,
+        id: 4,
         title: 'BootCampの練習だよ',
         mainContent: 'aaaaaaaaaaaaaa\naaaaaaa',
         good: 3,
@@ -20,21 +20,21 @@ export class InMemoryDataService implements InMemoryDbService {
         bad: 10,
       },
       {
-        id: 4,
+        id: 1,
         title: '4だよ',
         mainContent: 'aaaaaaaaaaaaaa\naaaaaaa',
         good: 1,
         bad: 99,
       },
       {
-        id: 5,
+        id: 6,
         title: 'サッカーをしました。',
         mainContent: '楽しかったです。',
         good: 50,
         bad: 10,
       },
       {
-        id: 6,
+        id: 5,
         title: 'ページングします',
         mainContent: '頑張ばります。',
         good: 30,

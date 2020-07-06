@@ -39,7 +39,15 @@ export class BlogDetailComponent implements OnInit {
     //   .getPrevArticle(this.routeParamId)
     //   .then((response) => response);
     // console.log(this.article);
-    let AllItem = await this.getAllArticle();
+    let AllItem: any;
+    AllItem = await this.getAllArticle();
+    AllItem = AllItem.sort(function (a, b) {
+      if (a.id < b.id) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
     console.log(AllItem);
   }
   goNext() {
@@ -51,7 +59,7 @@ export class BlogDetailComponent implements OnInit {
     this.detail.deleteArticle(this.routeParamId);
   }
 
-  async getAllArticle() {
+  async getAllArticle(): Promise<any> {
     return await this.detail.getAllArticle().then((response) => response);
   }
 }
