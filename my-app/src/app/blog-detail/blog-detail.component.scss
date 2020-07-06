@@ -40,7 +40,8 @@
     .good {
       margin: 10px;
       font-size: 50px;
-
+      transition: 0.3s;
+      cursor: pointer;
       &:hover {
         color: blue;
       }
@@ -51,6 +52,8 @@
     .bad {
       margin: 10px;
       font-size: 50px;
+      transition: 0.3s;
+      cursor: pointer;
       &:hover {
         color: red;
       }
@@ -63,6 +66,8 @@
   &__edit {
     .rewrite {
       font-size: 50px;
+      transition: 0.3s;
+      cursor: pointer;
       &:hover {
         color: grey;
       }
@@ -70,6 +75,8 @@
 
     .delete {
       font-size: 50px;
+      transition: 0.3s;
+      cursor: pointer;
       &:hover {
         color: grey;
       }
@@ -90,9 +97,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s;
 
     &:hover {
       color: rgb(62, 106, 226);
+      cursor: pointer;
     }
   }
   .isFirst,
