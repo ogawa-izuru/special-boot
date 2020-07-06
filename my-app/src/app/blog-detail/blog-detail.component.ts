@@ -15,6 +15,8 @@ export class BlogDetailComponent implements OnInit {
   good: number;
   bad: number;
   routeParamId: number;
+  isFirst: any;
+  isLast: any;
 
   constructor(
     private detail: BlogDetailService,
@@ -32,6 +34,21 @@ export class BlogDetailComponent implements OnInit {
     this.mainContent = this.article.mainContent;
     this.good = this.article.good;
     this.bad = this.article.bad;
+
+    let AllItem: Article[];
+    AllItem = await this.getAllArticle();
+    AllItem = AllItem.sort(function (a, b) {
+      if (a.id < b.id) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
+    let currentIndex = AllItem.findIndex(
+      (element) => element.id === this.routeParamId
+    );
+    this.isFirst = !AllItem[currentIndex - 1];
+    this.isLast = !AllItem[currentIndex + 1];
   }
 
   async goPrev() {
@@ -48,21 +65,52 @@ export class BlogDetailComponent implements OnInit {
         return 1;
       }
     });
-    let temp = AllItem.findIndex((element) => element.id === this.routeParamId);
+    let currentIndex = AllItem.findIndex(
+      (element) => element.id === this.routeParamId
+    );
 
-    console.log(typeof AllItem[0].id);
-    console.log(temp);
-    AllItem.forEach((element) => {
-      console.log(element);
+    this.article = AllItem[currentIndex - 1];
+    if (this.article) {
+      this.title = this.article.title;
+      this.mainContent = this.article.mainContent;
+      this.good = this.article.good;
+      this.bad = this.article.bad;
+      this.routeParamId = this.article.id;
+      this.isFirst = !AllItem[currentIndex - 2];
+      this.isLast = false;
+      history.pushState(null, null, 'detail/' + this.routeParamId);
+    }
+  }
+  async goNext() {
+    let AllItem: Article[];
+    AllItem = await this.getAllArticle();
+    AllItem = AllItem.sort(function (a, b) {
+      if (a.id < b.id) {
+        return -1;
+      } else {
+        return 1;
+      }
     });
-  }
-  goNext() {
-    alert('Next');
+    let currentIndex = AllItem.findIndex(
+      (element) => element.id === this.routeParamId
+    );
+    this.article = AllItem[currentIndex + 1];
+    if (this.article) {
+      this.title = this.article.title;
+      this.mainContent = this.article.mainContent;
+      this.good = this.article.good;
+      this.bad = this.article.bad;
+      this.routeParamId = this.article.id;
+      this.isLast = !AllItem[currentIndex + 2];
+      this.isFirst = false;
+      history.pushState(null, null, 'detail/' + this.article.id);
+    }
   }
 
-  deleteArticle() {
+  async deleteArticle() {
     alert('消します。');
-    this.detail.deleteArticle(this.routeParamId);
+    let sample = await this.detail.deleteArticle(this.routeParamId);
+    console.log(sample);
   }
 
   async getAllArticle(): Promise<any> {
