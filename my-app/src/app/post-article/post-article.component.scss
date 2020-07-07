@@ -1,0 +1,52 @@
+.article {
+  border: solid 0.5px black;
+  margin: auto;
+  margin-top: 20px;
+  width: 60%;
+  height: auto;
+  min-height: 100%;
+  max-width: 40%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px;
+  &__title {
+    border: solid 0.5px black;
+    height: 50px;
+    input {
+      margin: 5px;
+      padding-left: 10px;
+      float: left;
+      width: 70%;
+      height: 75%;
+      border: solid 0.5px black;
+    }
+  }
+  &_body {
+    margin: 10px;
+    min-height: 400px;
+
+    &__textarea {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 400px;
+      box-sizing: border-box;
+      font-size: 20px;
+    }
+  }
+}
+
+.edit-area {
+  border: solid 0.5px black;
+  margin: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.paging {
+  border: solid 0.5px black;
+  margin: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
