@@ -40,4 +40,12 @@ export class BlogDetailService {
   async getAllArticle() {
     return await this.http.get('/api/article/').toPromise();
   }
+
+  addGoodCount(article) {
+    return this.http.put('/api/article/', article);
+  }
+
+  addBadCount(article) {
+    return this.http.put('/api/article/', article);
+  }
 }
