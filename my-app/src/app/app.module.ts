@@ -11,8 +11,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './memorydata.service';
 import { DeletedDisplayComponent } from './deleted-display/deleted-display.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 import { PostArticleComponent } from './post-article/post-article.component';
 @NgModule({
+  declarations: [
     AppComponent,
     BlogDetailComponent,
     HeaderComponent,
