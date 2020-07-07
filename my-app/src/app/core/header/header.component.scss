@@ -11,6 +11,10 @@ header {
   margin-left: 10px;
   color: white;
   cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 .blog-logo {
