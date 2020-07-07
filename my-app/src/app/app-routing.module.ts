@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { DeletedDisplayComponent } from './deleted-display/deleted-display.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 const routes: Routes = [
   { path: '', component: BlogListComponent },
   { path: 'detail/:id', component: BlogDetailComponent },
   { path: 'deleted', component: DeletedDisplayComponent },
+  { path: 'error', component: ErrorPageComponent },
 ];
 
 @NgModule({
