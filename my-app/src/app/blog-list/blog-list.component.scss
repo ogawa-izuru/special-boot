@@ -21,3 +21,19 @@
     transform: scale(1.03);
   }
 }
+
+.post-button {
+  width: 150px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  cursor: pointer;
+  margin: auto;
+  &:hover {
+    background-color: rgb(230, 230, 230);
+  }
+}
