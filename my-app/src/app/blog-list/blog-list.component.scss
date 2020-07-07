@@ -23,17 +23,21 @@
 }
 
 .post-button {
-  width: 150px;
-  height: 30px;
-  border: 1px solid black;
+  width: 100px;
+  height: 80px;
+  border: 1px dashed black;
+
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.5s;
+  transition: 0.3s;
   cursor: pointer;
-  margin: auto;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
   &:hover {
     background-color: rgb(230, 230, 230);
+    transform: scale(1.1);
   }
 }

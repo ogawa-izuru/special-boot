@@ -1,0 +1,9 @@
+<p>practice-firebase works!</p>
+<input [(ngModel)]="title" />
+<input [(ngModel)]="name" />
+
+<button (click)="aaaaa()">押せええええ</button>
+
+<div *ngFor="let article of articleRef | async">
+  {{ article.title }}{{ article.name }}
+</div>

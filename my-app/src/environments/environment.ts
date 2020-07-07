@@ -5,13 +5,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyBHwgGtvkK7wq7Z-_bnbfUID8lMlp0K3yM',
-    authDomain: 'bootcamp-9f2c6.firebaseapp.com',
-    databaseURL: 'https://bootcamp-9f2c6.firebaseio.com',
-    projectId: 'bootcamp-9f2c6',
-    storageBucket: 'bootcamp-9f2c6.appspot.com',
-    messagingSenderId: '460110376501',
-    appId: '1:460110376501:web:1aef8d4e0b4cd8b6a5cb7c',
+    apiKey: 'AIzaSyB4f5Ge8udV-73I4ivLg5zH0eChCF6lz4g',
+    authDomain: 'bootcamp-9b2e3.firebaseapp.com',
+    databaseURL: 'https://bootcamp-9b2e3.firebaseio.com',
+    projectId: 'bootcamp-9b2e3',
+    storageBucket: 'bootcamp-9b2e3.appspot.com',
+    messagingSenderId: '30454873834',
+    appId: '1:30454873834:web:4b032d0bee0a0a3e536193',
+    measurementId: 'G-H16GY6DGZY',
   },
 };
 

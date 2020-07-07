@@ -15,8 +15,12 @@ import { InMemoryDataService } from './memorydata.service';
 import { DeletedDisplayComponent } from './deleted-display/deleted-display.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { PostArticleComponent } from './post-article/post-article.component';
+
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
+import { PracticeFirebaseComponent } from './practice-firebase/practice-firebase.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +30,7 @@ import { environment } from '../environments/environment';
     DeletedDisplayComponent,
     ErrorPageComponent,
     PostArticleComponent,
+    PracticeFirebaseComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +39,7 @@ import { environment } from '../environments/environment';
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

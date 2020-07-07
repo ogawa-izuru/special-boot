@@ -40,6 +40,28 @@ export class InMemoryDataService implements InMemoryDbService {
         good: 30,
         bad: 10,
       },
+      {
+        id: 7,
+        title: 'ページングしたろうか',
+        mainContent: '頑張ばります。',
+        good: 30,
+        bad: 10,
+      },
+      {
+        id: 8,
+        title: 'ページングしますとも',
+        mainContent: '頑張ばります。',
+        good: 30,
+        bad: 10,
+      },
+      {
+        id: 9,
+        title: 'ワンちゃんと散歩♪',
+        mainContent:
+          '今日は天気がいいのでうちのワンちゃんと散歩しました。\nここのところ雨だったのでなかなか自由に散歩させられなかったけど今日は公園で大はしゃぎ！！',
+        good: 30,
+        bad: 10,
+      },
     ];
     return { article };
   }
