@@ -2,9 +2,12 @@
   <div class="article__title">
     <h2>{{ title }}</h2>
   </div>
-  <div class="article_body">
+  <div class="article_body" *ngIf="!canEdit">
     {{ mainContent }}
   </div>
+  <textarea class="article_body" *ngIf="canEdit">
+    {{ mainContent }}
+  </textarea>
   <div class="edit-area">
     <div class="edit-area__assessment">
       <span class="material-icons-outlined good" (click)="add_GoodCount()">
@@ -21,8 +24,8 @@
       </span>
     </div>
     <div class="edit-area__edit">
-      <span class="material-icons rewrite">
-        create
+      <span class="material-icons rewrite" (click)="editArticle()">
+        edit
       </span>
       <span class="material-icons delete" (click)="deleteArticle()">
         delete

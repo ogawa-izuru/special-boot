@@ -17,6 +17,7 @@ export class BlogDetailComponent implements OnInit {
   routeParamId: number;
   isFirst: any;
   isLast: any;
+  canEdit: boolean = false;
 
   constructor(
     private detail: BlogDetailService,
@@ -130,5 +131,9 @@ export class BlogDetailComponent implements OnInit {
     this.bad += 1;
     this.article.bad += 1;
     this.detail.addBadCount(this.article).subscribe((res) => console.log(res));
+  }
+
+  editArticle() {
+    this.canEdit = !this.canEdit;
   }
 }
