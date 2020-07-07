@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CompileShallowModuleMetadata } from '@angular/compiler';
+
+import { Observable } from 'rxjs';
 
 import { Article } from '../class/article';
 
@@ -10,8 +11,9 @@ import { Article } from '../class/article';
 export class BlogDetailService {
   constructor(private http: HttpClient) {}
 
-  async getArticle(id): Promise<any> {
-    return await this.http.get('/api/article/' + id).toPromise();
+  getArticle(id): Observable<Article> {
+    // return await this.http.get('/api/article/' + id).toPromise();
+    return this.http.get<Article>('/api/article/' + id);
   }
 
   async getPrevArticle(id) {

@@ -24,20 +24,20 @@ export class BlogDetailComponent implements OnInit {
     private router: Router
   ) {}
 
-  async ngOnInit() {
+  ngOnInit() {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       this.routeParamId = parseInt(params.get('id'));
     });
-    this.article = await this.detail
-      .getArticle(this.routeParamId)
-      .then((response) => response);
-    this.title = this.article.title;
-    this.mainContent = this.article.mainContent;
-    this.good = this.article.good;
-    this.bad = this.article.bad;
+    this.detail.getArticle(this.routeParamId).subscribe((res) => {
+      this.article = res;
+      this.title = this.article.title;
+      this.mainContent = this.article.mainContent;
+      this.good = this.article.good;
+      this.bad = this.article.bad;
+    });
 
-    let AllItem: Article[];
-    AllItem = await this.getAllArticle();
+    let AllItem: any;
+    AllItem = this.getAllArticle();
     AllItem = AllItem.sort(function (a, b) {
       if (a.id < b.id) {
         return -1;
