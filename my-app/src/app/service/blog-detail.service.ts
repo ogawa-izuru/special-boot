@@ -38,7 +38,6 @@ export class BlogDetailService {
   }
 
   async getAllArticle() {
-    let res = await this.http.get('/api/article/').toPromise();
-    return res;
+    return await this.http.get('/api/article/').toPromise();
   }
 }
