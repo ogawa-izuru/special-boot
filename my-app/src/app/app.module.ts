@@ -7,6 +7,8 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { HeaderComponent } from './core/header/header.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 
+import { FormsModule } from '@angular/forms';
+
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './memorydata.service';
@@ -28,6 +30,7 @@ import { PostArticleComponent } from './post-article/post-article.component';
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

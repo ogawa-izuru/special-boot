@@ -1,14 +1,25 @@
 <div class="article">
   <div class="article__title">
-    <input type="text" placeholder="タイトルを入力してください。" />
+    <input
+      type="text"
+      placeholder="タイトルを入力してください。"
+      [(ngModel)]="title"
+    />
   </div>
   <div class="article_body">
-    <textarea class="article_body__textarea"></textarea>
+    <textarea
+      class="article_body__textarea"
+      [(ngModel)]="mainContent"
+    ></textarea>
   </div>
   <div class="edit-area">
     <div class="edit-area__assessment"></div>
     <div class="edit-area__edit"></div>
   </div>
 
-  <div class="paging"></div>
+  <div class="paging">
+    <button (click)="postArticle()">投稿する</button>
+  </div>
 </div>
+
+<div *ngIf="isError">空欄があります。</div>

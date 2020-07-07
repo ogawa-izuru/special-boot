@@ -10,7 +10,7 @@ import { Article } from '../class/article';
 export class PostArticleService {
   constructor(private http: HttpClient) {}
 
-  postArticle(article: Article): void {
-    // this.http.post('/api/article/' + 7);
+  postArticle(article: any): Observable<any> {
+    return this.http.post('/api/article/', article);
   }
 }
