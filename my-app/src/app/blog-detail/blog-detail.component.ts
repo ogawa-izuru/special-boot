@@ -99,7 +99,7 @@ export class BlogDetailComponent implements OnInit {
     this.article = AllItem[currentIndex + 1];
     if (this.article) {
       this.title = this.article.title;
-      this.mainContent = this.article.mainContent;
+      this.mainContent = this.article.mainContent.trim();
       this.good = this.article.good;
       this.bad = this.article.bad;
       this.routeParamId = this.article.id;
