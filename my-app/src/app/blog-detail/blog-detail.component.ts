@@ -24,7 +24,7 @@ export class BlogDetailComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       this.routeParamId = parseInt(params.get('id'));
     });
@@ -37,7 +37,7 @@ export class BlogDetailComponent implements OnInit {
     });
 
     let AllItem: any;
-    AllItem = this.getAllArticle();
+    AllItem = await this.getAllArticle();
     AllItem = AllItem.sort(function (a, b) {
       if (a.id < b.id) {
         return -1;
@@ -118,5 +118,17 @@ export class BlogDetailComponent implements OnInit {
 
   async getAllArticle(): Promise<any> {
     return await this.detail.getAllArticle().then((response) => response);
+  }
+
+  async add_GoodCount() {
+    this.good += 1;
+    this.article.good += 1;
+    this.detail.addGoodCount(this.article).subscribe((res) => console.log(res));
+  }
+
+  async add_BadCount() {
+    this.bad += 1;
+    this.article.bad += 1;
+    this.detail.addBadCount(this.article).subscribe((res) => console.log(res));
   }
 }

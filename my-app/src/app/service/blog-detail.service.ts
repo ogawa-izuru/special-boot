@@ -41,4 +41,12 @@ export class BlogDetailService {
     let res = await this.http.get('/api/article/').toPromise();
     return res;
   }
+
+  addGoodCount(article) {
+    return this.http.put('/api/article/', article);
+  }
+
+  addBadCount(article) {
+    return this.http.put('/api/article/', article);
+  }
 }
