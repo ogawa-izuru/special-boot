@@ -1,7 +1,14 @@
 <header class="header">
   <img src="assets/images/angular.png" class="blog-logo" />
   <p class="blog-title" routerLink="/">BootCamp</p>
-  <div class="user-icon">
+  <div class="user-icon" (click)="showIconNav()">
     安
+    <div class="icon-nav" *ngIf="isIconShow">
+      <ul>
+        <li>ああああ</li>
+        <li>ああああ</li>
+        <li>ああああ</li>
+      </ul>
+    </div>
   </div>
 </header>
