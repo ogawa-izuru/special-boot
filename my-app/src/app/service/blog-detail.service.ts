@@ -12,40 +12,42 @@ export class BlogDetailService {
   constructor(private http: HttpClient) {}
 
   getArticle(id): Observable<Article> {
-    // return await this.http.get('/api/article/' + id).toPromise();
-    return this.http.get<Article>('/api/article/' + id);
+    // return await this.http.get('/localhost:8080/articles/' + id).toPromise();
+    return this.http.get<Article>('http://localhost:8080/articles/' + id);
   }
 
-  async getPrevArticle(id) {
-    // let res = await this.http.get('/api/article/' + --id).toPromise();
-    let res = await this.http.get('/api/article/' + --id);
+  // async getPrevArticle(id) {
+  //   // let res = await this.http.get('/localhost:8080/articles/' + --id).toPromise();
+  //   let res = await this.http.get('http://localhost:8080/articles/' + --id);
 
-    console.log(res);
-    // return res.toPromise() || this.getPrevArticle(id);
+  //   console.log(res);
+  //   // return res.toPromise() || this.getPrevArticle(id);
 
-    if (res) {
-      //ここを改良
-      console.log(res.toPromise, 'cccccc');
-      return res.toPromise;
-    } else {
-      this.getPrevArticle(id);
-      console.log('bbbbb');
-    }
-  }
+  //   if (res) {
+  //     //ここを改良
+  //     console.log(res.toPromise, 'cccccc');
+  //     return res.toPromise;
+  //   } else {
+  //     this.getPrevArticle(id);
+  //     console.log('bbbbb');
+  //   }
+  // }
 
   async deleteArticle(id) {
-    return await this.http.delete('api/article/' + id).toPromise();
+    return await this.http
+      .delete('http://localhost:8080/articles/' + id)
+      .toPromise();
   }
 
   async getAllArticle() {
-    return await this.http.get('/api/article/').toPromise();
+    return await this.http.get('http://localhost:8080/articles').toPromise();
   }
 
   addGoodCount(article) {
-    return this.http.put('/api/article/', article);
+    return this.http.put('http://localhost:8080/articles/', article);
   }
 
   addBadCount(article) {
-    return this.http.put('/api/article/', article);
+    return this.http.put('http://localhost:8080/articles/', article);
   }
 }

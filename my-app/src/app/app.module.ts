@@ -18,7 +18,7 @@ import { PostArticleComponent } from './post-article/post-article.component';
 
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { environment } from '../environments/environment';
+// import { environment } from '../environments/environment';
 // import { PracticeFirebaseComponent } from './practice-firebase/practice-firebase.component';
 
 @NgModule({

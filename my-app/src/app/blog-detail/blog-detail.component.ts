@@ -31,8 +31,9 @@ export class BlogDetailComponent implements OnInit {
     });
     this.detail.getArticle(this.routeParamId).subscribe((res) => {
       this.article = res;
+      console.log(this.article);
       this.title = this.article.title;
-      this.mainContent = this.article.mainContent;
+      this.mainContent = this.article.maincontent;
       this.good = this.article.good;
       this.bad = this.article.bad;
     });
@@ -74,7 +75,7 @@ export class BlogDetailComponent implements OnInit {
     this.article = AllItem[currentIndex - 1];
     if (this.article) {
       this.title = this.article.title;
-      this.mainContent = this.article.mainContent;
+      this.mainContent = this.article.maincontent;
       this.good = this.article.good;
       this.bad = this.article.bad;
       this.routeParamId = this.article.id;
@@ -99,7 +100,7 @@ export class BlogDetailComponent implements OnInit {
     this.article = AllItem[currentIndex + 1];
     if (this.article) {
       this.title = this.article.title;
-      this.mainContent = this.article.mainContent.trim();
+      this.mainContent = this.article.maincontent.trim();
       this.good = this.article.good;
       this.bad = this.article.bad;
       this.routeParamId = this.article.id;
