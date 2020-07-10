@@ -25,7 +25,7 @@ export class PostArticleComponent implements OnInit {
       this.mainContent &&
       this.PostArticleService.postArticle({
         title: this.title,
-        mainContent: this.mainContent,
+        maincontent: this.mainContent,
         good: 0,
         bad: 0,
       }).subscribe(() => this.router.navigate(['/']))) ||

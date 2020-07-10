@@ -11,6 +11,6 @@ export class PostArticleService {
   constructor(private http: HttpClient) {}
 
   postArticle(article: any): Observable<any> {
-    return this.http.post('/api/article/', article);
+    return this.http.post('http://localhost:8080/post', article);
   }
 }
