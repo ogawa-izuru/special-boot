@@ -10,16 +10,16 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './memorydata.service';
+// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { InMemoryDataService } from './memorydata.service';
 import { DeletedDisplayComponent } from './deleted-display/deleted-display.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { PostArticleComponent } from './post-article/post-article.component';
 
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+// import { AngularFireModule } from '@angular/fire';
+// import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
-import { PracticeFirebaseComponent } from './practice-firebase/practice-firebase.component';
+// import { PracticeFirebaseComponent } from './practice-firebase/practice-firebase.component';
 
 @NgModule({
   declarations: [
@@ -30,16 +30,16 @@ import { PracticeFirebaseComponent } from './practice-firebase/practice-firebase
     DeletedDisplayComponent,
     ErrorPageComponent,
     PostArticleComponent,
-    PracticeFirebaseComponent,
+    // PracticeFirebaseComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
+    // AngularFireModule.initializeApp(environment.firebase),
+    // AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
