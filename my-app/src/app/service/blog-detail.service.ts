@@ -16,22 +16,22 @@ export class BlogDetailService {
     return this.http.get<Article>('http://localhost:8080/articles/' + id);
   }
 
-  // async getPrevArticle(id) {
-  //   // let res = await this.http.get('/localhost:8080/articles/' + --id).toPromise();
-  //   let res = await this.http.get('http://localhost:8080/articles/' + --id);
+  async getPrevArticle(id) {
+    // let res = await this.http.get('/localhost:8080/articles/' + --id).toPromise();
+    let res = await this.http.get('http://localhost:8080/articles/' + --id);
 
-  //   console.log(res);
-  //   // return res.toPromise() || this.getPrevArticle(id);
+    console.log(res);
+    // return res.toPromise() || this.getPrevArticle(id);
 
-  //   if (res) {
-  //     //ここを改良
-  //     console.log(res.toPromise, 'cccccc');
-  //     return res.toPromise;
-  //   } else {
-  //     this.getPrevArticle(id);
-  //     console.log('bbbbb');
-  //   }
-  // }
+    if (res) {
+      //ここを改良
+      console.log(res.toPromise, 'cccccc');
+      return res.toPromise;
+    } else {
+      this.getPrevArticle(id);
+      console.log('bbbbb');
+    }
+  }
 
   async deleteArticle(id) {
     return await this.http
@@ -44,7 +44,7 @@ export class BlogDetailService {
   }
 
   addGoodCount(article) {
-    return this.http.put('http://localhost:8080/articles/', article);
+    return this.http.put('http://localhost:8080/articles/put/', article);
   }
 
   addBadCount(article) {
